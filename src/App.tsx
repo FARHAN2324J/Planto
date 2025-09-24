@@ -6,15 +6,13 @@ const HomePage = lazy(() => import("./pages/Home/HomePage"));
 const Cart = lazy(() => import("./pages/Shop/Cart"));
 
 const LoadingSpinner = () => (
-  <div className="loader">
-    
-  </div>
+  <div className="loader"></div>
 );
 
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/Planto">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/" element={<HomePage />} />

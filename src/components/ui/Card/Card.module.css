@@ -1,0 +1,55 @@
+.card {
+  background: none;
+  position: relative;
+  border-radius: var(--card-radius);
+  /* overflow: hidden; */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-image: radial-gradient(
+    rgba(236, 236, 236, 0.973) 1px,
+    transparent 0
+  );
+  background-size: 4px 4px;
+  background-position: 0px 0px;
+  background-color: rgba(255, 255, 255, 0.03);
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.027) 0px,
+    /* 1 */ transparent 0px
+  );
+  background-size: 4px 4px;
+  background-position: 0px 0px;
+}
+
+.card::before {
+  background: linear-gradient(
+      45deg,
+      #ffffff33 0%,
+      #ffffff33 10%,
+      transparent 35%,
+      transparent 65%,
+      #ffffff33 90%,
+      #ffffff33 100%
+    )
+    border-box;
+  -webkit-mask: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(#fff, #fff);
+  -webkit-mask-composite: destination-out;
+  -webkit-mask: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(#fff, #fff);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  mask: linear-gradient(#fff, #fff) padding-box, linear-gradient(#fff, #fff);
+  mask-composite: exclude;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: var(--card-radius);
+}

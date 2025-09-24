@@ -1,0 +1,106 @@
+@import "tailwindcss";
+:root {
+  --card-radius: 60px;
+}
+
+body {
+  background-color: #1b2316;
+  color: #ffffffd1;
+  letter-spacing: 0.5px;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
+.s {
+  padding-top: 50px !important;
+  position: relative !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #ffffffd1 !important;
+  opacity: 1 !important;
+  transition: 0.3s !important;
+  border-radius: 20px !important;
+}
+
+.swiper-pagination-bullet-active {
+  width: 20px !important;
+  opacity: 1 !important;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider:hover .slide-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-350px * 4));
+  }
+}
+
+.slider .slide-track {
+  will-change: transform;
+  animation: scroll 25s linear infinite;
+  display: flex;
+  align-items: center;
+  width: calc(250px * 14);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffffd1 !important;
+  width: 30px !important;
+  height: 30px !important;
+  transition: all 0.5s ease !important;
+}
+
+.loader {
+  width: 100px;
+  aspect-ratio: 1;
+  padding: 10px;
+  box-sizing: border-box;
+  display: grid;
+  background: #1b2316;
+  filter: blur(5px) contrast(10);
+  mix-blend-mode: screen;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  background: linear-gradient(white 0 0) left,
+    linear-gradient(white 0 0) right;
+  background-size: 20px 40px;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+}
+.loader:after {
+  height: 20px;
+  width: 20px;
+  margin: auto 0;
+  border-radius: 50%;
+  background: white;
+  animation: l10 1s infinite;
+}
+@keyframes l10 {
+  90%,
+  100% {
+    transform: translate(300%);
+  }
+}

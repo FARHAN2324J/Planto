@@ -21,7 +21,7 @@ const NavbarMd = () => {
 
   return (
     <nav className="z-[9999] relative md:block hidden">
-      <ul className="flex fixed justify-between bg-gradient-to-t  from-[#1b231600] to-[#1b2316] items-center w-full p-8">
+      <ul className="flex fixed justify-between backdrop-blur-xl bg-gradient-to-t  from-[#1b231600] to-[#1b2316] items-center w-full p-8">
         <li
           className="flex items-end gap-2 cursor-pointer "
           onClick={() => scrollToSection("Home-p")}
@@ -124,7 +124,7 @@ const NavbarSm = () => {
 
   return (
     <nav className="z-[9999] relative md:hidden block">
-      <ul className="flex fixed justify-between bg-gradient-to-t from-[#1b231600] to-[#1b2316] items-baseline w-full p-5">
+      <ul className="flex fixed justify-between backdrop-blur-xl bg-gradient-to-t from-[#1b231600] to-[#1b2316] items-baseline w-full p-5">
         <li
           className="flex items-end gap-2 cursor-pointer "
           onClick={() => handleMenuClick("Home-p")}
